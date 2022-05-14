@@ -13,5 +13,13 @@
         out.println(variable);
     %>
 </p>
+<p>
+    <%
+        for (int i = 1; i < 11; i++) {
+            out.println("Ligne numéro " + i + "</br>");
+        }
+    %>
+</p>
+<%@ include file="footer.jsp" %>
 </body>
 </html>
