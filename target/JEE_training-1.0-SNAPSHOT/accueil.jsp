@@ -12,7 +12,8 @@
 </head>
 <body>
 <h1> Bienvenue sur mon site </h1>
-<p> Bonjour ${empty username ? 'inconnu(e)' : username} vous êtes ${statut}</p>
+<p> Bonjour ${empty user.username ? 'inconnu(e)' : user.username}
+    vous êtes ${user.admin ? 'admin' : "un user"}</p>
 <%@include file="footer.jsp" %>
 </body>
 </html>

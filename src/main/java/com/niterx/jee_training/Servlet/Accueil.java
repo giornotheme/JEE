@@ -12,15 +12,7 @@ public class Accueil extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = new User(1, "NiterX", "1234", true);
-
-        String username = user.getUsername();
-        request.setAttribute("username", username);
-        if(user.isAdmin()==true){
-            request.setAttribute("statut","admin");
-        }
-        else{
-            request.setAttribute("statut","user");
-        }
+        request.setAttribute("user", user);
         this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
     }
 
