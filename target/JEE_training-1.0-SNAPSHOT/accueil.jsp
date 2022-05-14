@@ -11,6 +11,8 @@
     <title>Accueil</title>
 </head>
 <body>
-<%@include file="footer.jsp"%>
+<h1> Bienvenue sur mon site </h1>
+<p> Bonjour ${name}</p>
+<%@include file="footer.jsp" %>
 </body>
 </html>

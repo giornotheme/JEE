@@ -5,10 +5,12 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "Accueil", value = "/Accueil")
+@WebServlet(name = "Accueil", value = "/")
 public class Accueil extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("name");
+        request.setAttribute("name", name);
         this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
     }
 
