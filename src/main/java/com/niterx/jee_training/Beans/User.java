@@ -38,10 +38,9 @@ public class User {
         this.admin = admin;
     }
 
-    public User(int id, String username, String password, boolean admin) {
+    public User(int id, String username, String password) {
         this.id = id;
         this.username = username;
         this.password = password;
-        this.admin = admin;
     }
 }

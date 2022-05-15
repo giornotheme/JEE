@@ -1,5 +1,6 @@
 package com.niterx.jee_training.Servlet;
 
+import com.niterx.jee_training.Beans.Authentication;
 import com.niterx.jee_training.Beans.User;
 
 import javax.servlet.*;
@@ -11,13 +12,15 @@ import java.io.IOException;
 public class Accueil extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        User user = new User(1, "NiterX", "1234", true);
-        request.setAttribute("user", user);
         this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        Authentication authentication = new Authentication();
+        authentication.verif(request);
+        request.setAttribute("authentication", authentication);
+        this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request,response);
     }
 }
